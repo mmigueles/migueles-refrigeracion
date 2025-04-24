@@ -1,6 +1,11 @@
 function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("activo");
+    const menu = document.getElementById('menu');
+    // Verifica si el menú tiene la clase "activo", si no la tiene, se agrega
+    if (menu.classList.contains('activo')) {
+        menu.classList.remove('activo');
+    } else {
+        menu.classList.add('activo');
+    }
 }
 
 function sendToWhatsApp(event) {

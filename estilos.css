@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f0f9ff;
   color: #333;
   line-height: 1.6;
@@ -19,14 +19,16 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 .logo-container img {
@@ -34,37 +36,33 @@ header {
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 15px;
 }
 
 .logo-container h1 {
   font-size: 2rem;
   font-weight: 800;
   color: white;
-  flex-grow: 1;
 }
 
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 26px;
+  font-size: 28px;
   color: white;
   cursor: pointer;
+  margin-left: auto;
 }
 
 nav {
-  margin-top: 10px;
-  margin-right: 200px;
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  justify-content: flex-end;
-  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -79,25 +77,43 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
   nav {
+    width: 100%;
     display: none;
     flex-direction: column;
     background-color: #0077ff;
+    margin-top: 10px;
     padding: 10px;
     border-radius: 10px;
-    margin-top: 10px;
   }
 
   nav.activo {
     display: flex;
   }
 
-  .menu-toggle {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  nav ul li a {
+    padding: 10px;
     display: block;
   }
 }
 
-/* Sección inicio */
+/* Sección de inicio */
 #inicio {
   position: relative;
   height: 80vh;
@@ -117,8 +133,8 @@ nav ul li a:hover {
   height: 100%;
   background-size: cover;
   background-position: center;
+  animation: cambiarFondo 16s infinite;
   z-index: 0;
-  transition: background-image 1s ease-in-out;
 }
 
 .contenido-inicio {
@@ -128,6 +144,37 @@ nav ul li a:hover {
   padding: 20px 30px;
   border-radius: 12px;
   max-width: 90%;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+  display: flex;
+  width: 400%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0%); }
 }
 
 /* Secciones */
@@ -162,7 +209,7 @@ form {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   max-width: 500px;
   margin: auto;
 }
@@ -172,7 +219,6 @@ form textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-family: inherit;
 }
 
 form button {

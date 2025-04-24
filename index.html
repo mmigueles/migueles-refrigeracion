@@ -16,19 +16,19 @@
             <img src="img/logo.png" alt="Logo de Migueles Refrigeración">
             <h1>Migueles Refrigeración</h1>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <nav id="menu">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#cotizacion">Cotización</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    <li><a href="#ubicacion">Ubicación</a></li>
-                </ul>
-            </nav>
         </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#cotizacion">Cotización</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <<section id="inicio">
+    <section id="inicio">
         <div class="fondo-slider"></div>
         <div class="contenido-inicio">
             <h2>Bienvenidos a Migueles Refrigeración</h2>
@@ -72,45 +72,14 @@
         <h2>Ubicación</h2>
         <p>Atendemos en Gualeguaychú y alrededores. ¡Escribinos para coordinar!</p>
         <div class="mapa-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107066.86745051028!2d-58.630834709628836!3d-33.00800386803211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95baa828f3333543%3A0xa95f93d6a79497c1!2zR3VhbGVndWF5Y2jDuiwgRW50cmUgUsOtb3M!5e0!3m2!1ses!2sar!4v1745450218037!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107066.86745051028!2d-58.630834709628836!3d-33.00800386803211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95baa828f3333543%3A0xa95f93d6a79497c1!2zR3VhbGVndWF5Y2jDuiwgRW50cmUgUsOtb3M!5e0!3m2!1ses!2sar!4v1745450218037!5m2!1ses!2sar"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </section>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('activo');
-        }
-
-        function sendToWhatsApp(event) {
-            event.preventDefault();
-            const nombre = document.getElementById("nombre").value;
-            const email = document.getElementById("email").value;
-            const telefono = document.getElementById("telefono").value;
-            const mensaje = document.getElementById("mensaje").value;
-            const texto = `Hola, mi nombre es ${nombre}.\nCorreo: ${email}\nTeléfono: ${telefono}\nConsulta: ${mensaje}`;
-            const url = `https://wa.me/+5491137583720?text=${encodeURIComponent(texto)}`;
-            window.open(url, "_blank");
-        }
-    </script>
-    <script>
-        const fondoSlider = document.querySelector('.fondo-slider');
-        const imagenes = [
-            'img/trabajo1.jpg',
-            'img/trabajo2.jpg',
-            'img/trabajo3.jpg',
-            'img/trabajo4.jpg'
-        ];
-        let index = 0;
-    
-        function cambiarFondo() {
-            fondoSlider.style.backgroundImage = `url('${imagenes[index]}')`;
-            index = (index + 1) % imagenes.length;
-        }
-    
-        cambiarFondo(); // inicial
-        setInterval(cambiarFondo, 4000); // cada 4 segundos
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

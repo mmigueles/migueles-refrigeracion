@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
   background-color: #f0f9ff;
   color: #333;
   line-height: 1.6;
@@ -125,6 +126,10 @@ nav ul li a:hover {
   text-align: center;
 }
 
+#inicio h2 {
+  color: #ffe600;
+}
+
 .fondo-slider {
   position: absolute;
   top: 0;
@@ -170,11 +175,21 @@ nav ul li a:hover {
 }
 
 @keyframes slide {
-  0% { transform: translateX(0%); }
-  25% { transform: translateX(-100%); }
-  50% { transform: translateX(-200%); }
-  75% { transform: translateX(-300%); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 /* Secciones */
@@ -196,6 +211,19 @@ section ul li {
   list-style: none;
 }
 
+#servicios ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+#servicios li {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 /* Formulario */
 #cotizacion h2 {
   text-align: center;
@@ -209,7 +237,7 @@ form {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   margin: auto;
 }
@@ -222,6 +250,8 @@ form textarea {
 }
 
 form button {
+  font-size: 16px;
+  letter-spacing: 1px;
   background-color: #00aaff;
   color: white;
   padding: 12px;
@@ -268,4 +298,22 @@ form button:hover {
   border: 0;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 28px;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
 }

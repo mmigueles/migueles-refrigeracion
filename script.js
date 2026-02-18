@@ -1,11 +1,11 @@
 function toggleMenu() {
-    const menu = document.getElementById('menu');
-    // Verifica si el menú tiene la clase "activo", si no la tiene, se agrega
-    if (menu.classList.contains('activo')) {
-        menu.classList.remove('activo');
-    } else {
-        menu.classList.add('activo');
-    }
+  const menu = document.getElementById("menu");
+  // Verifica si el menú tiene la clase "activo", si no la tiene, se agrega
+  if (menu.classList.contains("activo")) {
+    menu.classList.remove("activo");
+  } else {
+    menu.classList.add("activo");
+  }
 }
 
 function sendToWhatsApp(event) {
@@ -14,7 +14,12 @@ function sendToWhatsApp(event) {
   const email = document.getElementById("email").value;
   const telefono = document.getElementById("telefono").value;
   const mensaje = document.getElementById("mensaje").value;
-  const texto = `Hola, mi nombre es ${nombre}.\nCorreo: ${email}\nTeléfono: ${telefono}\nConsulta: ${mensaje}`;
+  const texto = `Hola Migueles Refrigeración, mi nombre es ${nombre}.
+Correo: ${email}
+Teléfono: ${telefono}
+Consulta: ${mensaje}
+
+Quedo a la espera de su respuesta.`;
   const url = `https://wa.me/+5491137583720?text=${encodeURIComponent(texto)}`;
   window.open(url, "_blank");
 }
@@ -35,3 +40,9 @@ function cambiarFondo() {
 
 cambiarFondo(); // inicial
 setInterval(cambiarFondo, 4000); // cada 4 segundos
+
+document.querySelectorAll("#menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.getElementById("menu").classList.remove("activo");
+  });
+});

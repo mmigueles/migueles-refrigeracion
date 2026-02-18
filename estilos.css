@@ -223,6 +223,37 @@ section ul li {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+#servicios {
+  text-align: center;
+}
+
+#servicios h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+#servicios ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0;
+}
+
+#servicios li {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  font-size: 1.2rem;          /* más grande */
+  font-weight: 600;           /* más fuerte */
+  text-align: center;         /* centrado */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#servicios li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
 /* Formulario */
 #cotizacion h2 {
@@ -299,17 +330,20 @@ form button:hover {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  width: 60px;          /* tamaño fijo */
+  height: 60px;         /* igual ancho y alto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #25d366;
   color: white;
   font-size: 28px;
-  padding: 15px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;   /* círculo perfecto */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
   z-index: 1000;
   transition: transform 0.3s ease;
 }
